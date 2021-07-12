@@ -13,12 +13,6 @@ exCat = ["No-Exercise","Exercise"]
 mouseClass = pd.Categorical.from_codes(mouseID, exCat)
 mouseDataFrame = data.join(pd.Series(mouseClass, name='class'))
 
-#apply the LDA now
-lda = LinearDiscriminantAnalysis()
-mouseLDA = lda.fit_transform(data,mouseClass)
-#print('MouseLDA results', mouseLDA)
-
-
 #Begin manually solving the LDA in order to plot the points in pyplot (mouseDataFrame is needed for this)
 #Step 1: Creating a set of vectors w/ the means for the observation parameters
 classMeans = pd.DataFrame(columns=exCat)
